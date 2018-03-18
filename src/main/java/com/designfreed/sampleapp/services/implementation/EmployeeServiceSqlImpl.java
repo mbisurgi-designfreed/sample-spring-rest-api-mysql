@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class EmployeeServiceMongoImpl implements EmployeeService {
+public class EmployeeServiceSqlImpl implements EmployeeService {
     EmployeeRepository employeeRepository;
 
     @Autowired
@@ -19,11 +19,11 @@ public class EmployeeServiceMongoImpl implements EmployeeService {
 
     @Override
     public List<Employee> findAll() {
-        return employeeRepository.findAll();
+        return (List<Employee>) employeeRepository.findAll();
     }
 
     @Override
-    public Employee findById(String id) {
+    public Employee findById(Long id) {
         return employeeRepository.findById(id).get();
     }
 
@@ -33,7 +33,7 @@ public class EmployeeServiceMongoImpl implements EmployeeService {
     }
 
     @Override
-    public void deleteById(String id) {
+    public void deleteById(Long id) {
         employeeRepository.deleteById(id);
     }
 }

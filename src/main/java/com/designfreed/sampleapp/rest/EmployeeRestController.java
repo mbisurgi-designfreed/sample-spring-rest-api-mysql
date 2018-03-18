@@ -26,7 +26,7 @@ public class EmployeeRestController {
     }
 
     @GetMapping("/find/{id}")
-    public Employee findById(@PathVariable(name = "id") String id) {
+    public Employee findById(@PathVariable(name = "id") Long id) {
         return employeeService.findById(id);
     }
 
@@ -46,7 +46,7 @@ public class EmployeeRestController {
     }
 
     @PatchMapping("/edit/{id}")
-    public ResponseEntity<Employee> edit(@PathVariable(name = "id") String id, @RequestBody Employee employee) {
+    public ResponseEntity<Employee> edit(@PathVariable(name = "id") Long id, @RequestBody Employee employee) {
         employee.setId(id);
         Employee updateEmployee = employeeService.saveOrUpdate(employee);
 
@@ -62,7 +62,7 @@ public class EmployeeRestController {
     }
 
     @DeleteMapping("/delete/{id}")
-    public void delete(@PathVariable(name = "id") String id) {
+    public void delete(@PathVariable(name = "id") Long id) {
         employeeService.deleteById(id);
     }
 }

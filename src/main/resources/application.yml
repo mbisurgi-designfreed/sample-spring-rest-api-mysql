@@ -1,13 +1,24 @@
 spring:
   profiles:
     active: dev
-  data:
-    mongodb:
-      host: ds019766.mlab.com
-      port: 19766
-      database: sample-spring-rest
-      username: admin
-      password: maximati
+  datasource:
+    url: jdbc:mysql://localhost:3306/sample-spring-rest
+    username: root
+    password: maximati
+    driver-class-name: com.mysql.jdbc.Driver
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+      naming:
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyHbmImpl
+        physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+
+
+
 
 
 

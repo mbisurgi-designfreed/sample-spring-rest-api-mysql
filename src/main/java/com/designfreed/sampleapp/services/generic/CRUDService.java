@@ -5,10 +5,10 @@ import java.util.List;
 public interface CRUDService<T> {
     List<T> findAll();
 
-    T findById(String id);
+    T findById(Long id);
 
     T saveOrUpdate(T domainObject);
 
-    void deleteById(String id);
+    void deleteById(Long id);
 }
 
