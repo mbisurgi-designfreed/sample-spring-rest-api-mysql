@@ -1,0 +1,15 @@
+spring:
+  profiles:
+    active: dev
+  data:
+    mongodb:
+      host: ds019766.mlab.com
+      port: 19766
+      database: sample-spring-rest
+      username: admin
+      password: maximati
+
+
+
+
+
